@@ -1,6 +1,5 @@
 @echo off
 cd /d "%~dp0"
-if not defined in_subprocess (cmd /k set in_subprocess=y ^& %0 %* & echo There was an error with the code, please contact Katzenwerfer#2028 on discord or fix it yourself :p) & exit)
 
 set startup=yes
 set /p startup=<startup.txt
