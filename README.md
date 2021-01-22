@@ -1,9 +1,9 @@
 # Youtube-dl_batch
-This is a batch script that works as some sort of GUI for Youtube-dl
+This is a batchfile script that works as some sort of GUI for Youtube-dl
 
 ## Requirements
 
-Youtube-dl (the executable)
+youtube-dl.exe (https://github.com/ytdl-org/youtube-dl/releases)
 
 ## Usage
 
