@@ -73,7 +73,7 @@ set /p format="Format (default=vp9): "
 timeout 1 >nul
 echo.
 echo Downloading file, please wait...
-if %format%==a (youtube-dl %URL% -f "bestaudio[acodec=opus]" -o "%output%\%%(title)s")
+if %format%==a (youtube-dl %URL% -f "bestaudio[acodec=opus]" -o "%output%\%%(title)s.webm")
 if %format%==av01 (youtube-dl %URL% -f "bestvideo[vcodec*=%format%][height<=%resolution%]+bestaudio[acodec=opus]" -o "%output%\%%(title)s")
 if %format%==avc1 (youtube-dl %URL% -f "bestvideo[vcodec*=%format%][height<=%resolution%]+bestaudio[acodec=opus]" -o "%output%\%%(title)s")
 if %format%==vp9 (youtube-dl %URL% -f "bestvideo[vcodec*=%format%][height<=%resolution%]+bestaudio[acodec=opus]" -o "%output%\%%(title)s")
