@@ -5,7 +5,7 @@ This is a batchfile script that works as some sort of GUI for Youtube-dl
 
 youtube-dl.exe (https://github.com/ytdl-org/youtube-dl/releases)
 
-##Setup
+## Setup
 
 Place everything inside a folder.
 The structure should be something similar to this:
