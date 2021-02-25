@@ -5,8 +5,21 @@ This is a batchfile script that works as some sort of GUI for Youtube-dl
 
 youtube-dl.exe (https://github.com/ytdl-org/youtube-dl/releases)
 
+##Setup
+
+Place everything inside a folder.
+The structure should be something similar to this:
+
+- Folder
+
+  - run yt-dl.bat
+
+  - youtube-dl.exe
+
 ## Usage
 
-Just put the .bat in the same folder as youtube-dl.exe and run it
+Just run yt-dl.bat
 
-I would recommend doing a folder to store the .bat and yt-dl
+It should start a setup process in the first run, after that just give it a link and it will display the available formats
+
+(I don't recommend using this with other pages other than youtube)
