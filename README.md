@@ -1,8 +1,8 @@
 #
-# I'm trying to move the script to PowerShell
+# Note: I'm trying to move the script to PowerShell
 #
 
-# Youtube-dl_batch
+# Youtube-dl_PS
 This is a PowerShell script that works as some sort of GUI for Youtube-dl
 
 The Batchfile version is on the second branch
