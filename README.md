@@ -3,7 +3,7 @@ This is a batchfile script that works as some sort of GUI for Youtube-dl
 
 ## Requirements
 
-youtube-dl.exe (https://github.com/ytdl-org/youtube-dl/releases)
+youtube-dl.exe (https://github.com/ytdl-org/youtube-dl/releases/latest)
 
 ## Setup
 
