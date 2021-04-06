@@ -1,3 +1,7 @@
+#
+# I'm trying to move the script to PowerShell
+#
+
 # Youtube-dl_batch
 This is a batchfile script that works as some sort of GUI for Youtube-dl
 
