@@ -3,7 +3,9 @@
 #
 
 # Youtube-dl_batch
-This is a batchfile script that works as some sort of GUI for Youtube-dl
+This is a PowerShell script that works as some sort of GUI for Youtube-dl
+
+The Batchfile version is on the second branch
 
 ## Requirements
 
@@ -16,14 +18,10 @@ The structure should be something similar to this:
 
 - Folder
 
-  - run yt-dl.bat
+  - run script.ps1
 
   - youtube-dl.exe
 
 ## Usage
 
-Just run yt-dl.bat
-
-It should start a setup process in the first run, after that just give it a link and it will display the available formats
-
-(I don't recommend using this with other pages other than youtube, but will change that later)
+...
