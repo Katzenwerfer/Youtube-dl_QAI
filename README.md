@@ -22,4 +22,4 @@ Just run yt-dl.bat
 
 It should start a setup process in the first run, after that just give it a link and it will display the available formats
 
-(I don't recommend using this with other pages other than youtube)
+(I don't recommend using this with other pages other than youtube, but will change that later)
