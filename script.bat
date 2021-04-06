@@ -65,7 +65,7 @@ echo.
 echo Printing available formats...
 timeout 1 >nul
 echo.
-youtube-dl "%URL%" -F
+"%cd%/youtube-dl" "%URL%" -F
 echo.
 echo Specify a format (av01, vp9 or avc1) (type "a" for audio only)
 set format=vp9
@@ -73,10 +73,10 @@ set /p format="Format (default=vp9): "
 timeout 1 >nul
 echo.
 echo Downloading file, please wait...
-if %format%==a (youtube-dl %URL% -f "bestaudio[acodec=opus]" -o "%output%\%%(title)s.webm")
-if %format%==av01 (youtube-dl %URL% -f "bestvideo[vcodec*=%format%][height<=%resolution%]+bestaudio[acodec=opus]" -o "%output%\%%(title)s")
-if %format%==avc1 (youtube-dl %URL% -f "bestvideo[vcodec*=%format%][height<=%resolution%]+bestaudio[acodec=opus]" -o "%output%\%%(title)s")
-if %format%==vp9 (youtube-dl %URL% -f "bestvideo[vcodec*=%format%][height<=%resolution%]+bestaudio[acodec=opus]" -o "%output%\%%(title)s")
+if %format%==a ("%cd%/youtube-d"l %URL% -f "bestaudio[acodec=opus]" -o "%output%\%%(title)s.webm")
+if %format%==av01 ("%cd%/youtube-dl" %URL% -f "bestvideo[vcodec*=%format%][height<=%resolution%]+bestaudio[acodec=opus]" -o "%output%\%%(title)s")
+if %format%==avc1 ("%cd%/youtube-dl" %URL% -f "bestvideo[vcodec*=%format%][height<=%resolution%]+bestaudio[acodec=opus]" -o "%output%\%%(title)s")
+if %format%==vp9 ("%cd%/youtube-dl" %URL% -f "bestvideo[vcodec*=%format%][height<=%resolution%]+bestaudio[acodec=opus]" -o "%output%\%%(title)s")
 echo.
 echo File downloaded, check the folder for the result
 echo.
