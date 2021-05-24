@@ -1,7 +1,7 @@
 @echo off
-if not defined in_subprocess (cmd /k set in_subprocess=y ^& %0 %*) & exit )
+:: if not defined in_subprocess (cmd /k set in_subprocess=y ^& %0 %*) & exit )
 cd /d "%~dp0"
-echo %cd%
+:: echo %cd%
 
 set startup=yes
 set /p startup=<startup.txt
