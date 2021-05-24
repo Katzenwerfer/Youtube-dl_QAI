@@ -1,5 +1,7 @@
 @echo off
+if not defined in_subprocess (cmd /k set in_subprocess=y ^& %0 %*) & exit )
 cd /d "%~dp0"
+echo %cd%
 
 set startup=yes
 set /p startup=<startup.txt
@@ -67,16 +69,16 @@ timeout 1 >nul
 echo.
 "%cd%/youtube-dl" "%URL%" -F
 echo.
-echo Specify a format (av01, vp9 or avc1) (type "a" for audio only)
+echo Specify a format (avc, vp9 or av1) (type "a" for audio only)
 set format=vp9
 set /p format="Format (default=vp9): "
 timeout 1 >nul
 echo.
 echo Downloading file, please wait...
-if %format%==a ("%cd%/youtube-d"l %URL% -f "bestaudio[acodec=opus]" -o "%output%\%%(title)s.webm")
-if %format%==av01 ("%cd%/youtube-dl" %URL% -f "bestvideo[vcodec*=%format%][height<=%resolution%]+bestaudio[acodec=opus]" -o "%output%\%%(title)s")
-if %format%==avc1 ("%cd%/youtube-dl" %URL% -f "bestvideo[vcodec*=%format%][height<=%resolution%]+bestaudio[acodec=opus]" -o "%output%\%%(title)s")
-if %format%==vp9 ("%cd%/youtube-dl" %URL% -f "bestvideo[vcodec*=%format%][height<=%resolution%]+bestaudio[acodec=opus]" -o "%output%\%%(title)s")
+if %format%==a ("%cd%/youtube-dl" %URL% -f "bestaudio[acodec=opus]" -o "%output%\%%(title)s.webm")
+if %format%==avc ("%cd%/youtube-dl" %URL% -f "bestvideo[vcodec*=avc1][height<=%resolution%]+bestaudio[acodec=opus]" -o "%output%\%%(title)s")
+if %format%==av1 ("%cd%/youtube-dl" %URL% -f "bestvideo[vcodec*=av01][height<=%resolution%]+bestaudio[acodec=opus]" -o "%output%\%%(title)s")
+if %format%==vp9 ("%cd%/youtube-dl" %URL% -f "bestvideo[vcodec*=vp9][height<=%resolution%]+bestaudio[acodec=opus]" -o "%output%\%%(title)s")
 echo.
 echo File downloaded, check the folder for the result
 echo.
