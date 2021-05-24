@@ -12,7 +12,7 @@ The structure should be something similar to this:
 
 - Folder
 
-  - run yt-dl.bat
+  - script.bat
 
   - youtube-dl.exe
 
