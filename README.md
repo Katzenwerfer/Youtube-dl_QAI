@@ -1,4 +1,4 @@
-# Youtube-dl_batch
+# Youtube-dl_batch-QAI
 This is a batchfile script that works as some sort of GUI for Youtube-dl
 
 ## Requirements
