@@ -3,7 +3,7 @@
 #
 
 # Youtube-dl_PS
-This is a PowerShell script that works as some sort of GUI for Youtube-dl
+This is a PowerShell script that works as some sort of QAI for Youtube-dl
 
 The Batchfile version is on the second branch
 
