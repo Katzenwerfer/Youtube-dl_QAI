@@ -2,7 +2,7 @@
 # Note: I'm trying to move the script to PowerShell
 #
 
-# Youtube-dl_QAI
+# Youtube-dl_powershell-QAI
 This is a PowerShell script that works as some sort of QAI for Youtube-dl
 
 The Batchfile version is on the second branch
