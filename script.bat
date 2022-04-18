@@ -1,5 +1,5 @@
 @echo off
-:: if not defined in_subprocess (cmd /k set in_subprocess=y ^& %0 %*) & exit )
+if not defined in_subprocess (cmd /k set in_subprocess=y ^& %0 %*) & exit )
 cd /d "%~dp0"
 :: echo %cd%
 
@@ -67,18 +67,19 @@ echo.
 echo Printing available formats...
 timeout 1 >nul
 echo.
-"%cd%/youtube-dl" "%URL%" -F
+"%cd%/yt-dlp" "%URL%" -F
 echo.
 echo Specify a format (avc, vp9 or av1) (type "a" for audio only)
-set format=vp9
-set /p format="Format (default=vp9): "
+set format=best
+set /p format="Format (default=best): "
 timeout 1 >nul
 echo.
 echo Downloading file, please wait...
-if %format%==a ("%cd%/youtube-dl" %URL% -f "bestaudio[acodec=opus]" -o "%output%\%%(title)s.webm")
-if %format%==avc ("%cd%/youtube-dl" %URL% -f "bestvideo[vcodec*=avc1][height<=%resolution%]+bestaudio[acodec=opus]" -o "%output%\%%(title)s")
-if %format%==av1 ("%cd%/youtube-dl" %URL% -f "bestvideo[vcodec*=av01][height<=%resolution%]+bestaudio[acodec=opus]" -o "%output%\%%(title)s")
-if %format%==vp9 ("%cd%/youtube-dl" %URL% -f "bestvideo[vcodec*=vp9][height<=%resolution%]+bestaudio[acodec=opus]" -o "%output%\%%(title)s")
+if %format%==best ("%cd%/yt-dlp" %URL% -f "bv[height<=%resolution%]+ba]" -o "%output%\%%(title)s")
+if %format%==a ("%cd%/yt-dlp" %URL% -f "ba[acodec=opus]" -o "%output%\%%(title)s.ogg")
+if %format%==avc ("%cd%/yt-dlp" %URL% -f "bv[vcodec*=avc1][height<=%resolution%]+ba[acodec*=opus]" -o "%output%\%%(title)s")
+if %format%==av1 ("%cd%/yt-dlp" %URL% -f "bv[vcodec*=av01][height<=%resolution%]+ba[acodec*=opus]" -o "%output%\%%(title)s")
+if %format%==vp9 ("%cd%/yt-dlp" %URL% -f "bv[vcodec*=vp9][height<=%resolution%]+ba[acodec*=opus]" -o "%output%\%%(title)s")
 echo.
 echo File downloaded, check the folder for the result
 echo.
@@ -102,3 +103,11 @@ echo            2
 timeout 1 >nul
 echo            1
 timeout 1 >nul
+exit
+
+rem Remember to add this things
+rem - Support for batch downloading with text file of URLs or something
+rem - Support for Advanced Downloading, using those f[number] things
+rem - yeah...I can't think of something else...ah!, port this shit to powershell
+rem - oh, and also add a yt-dlp.exe installer/updater check at start
+rem - new idea, add a menu similar to the one in BudHUD updater
